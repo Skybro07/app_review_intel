@@ -3,7 +3,7 @@ import pandas as pd
 import streamlit as st
 
 st.set_page_config(page_title="Fintech App Review Intelligence", layout="wide")
-df = pd.read_csv("data/reviews_tagged.csv", parse_dates=["date"])
+df = pd.read_csv("data/reviews_tagged.csv")
 st.title("Fintech App Review Intelligence")
 
 apps = st.sidebar.multiselect("Apps", sorted(df["app"].unique()), default=sorted(df["app"].unique()))
@@ -15,8 +15,8 @@ c1.metric("Reviews", len(f)); c2.metric("Avg rating", f"{f['rating'].mean():.2f}
 
 left, right = st.columns(2)
 left.subheader("Themes"); left.bar_chart(f["theme"].value_counts())
-f2 = f.assign(month=f["date"].dt.to_period("M").astype(str))
-right.subheader("Reviews over time"); right.line_chart(f2.groupby("month").size())
+right.subheader("Average rating by app")
+right.bar_chart(f.groupby("app")["rating"].mean())
 
 st.subheader("Priority (volume x severity)")
 pr = f.groupby("theme").agg(volume=("text", "count"), avg_severity=("severity", "mean"))
