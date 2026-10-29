@@ -90,5 +90,5 @@ After changing theme rules, rerun `python tag_reviews.py keywords` to refresh al
 - Severity is a rule-based or LLM judgment, not a measured business impact.
 
 ## Tech stack
-Python, pandas, matplotlib, Streamlit, google-play-scraper, Claude API (optional tagging mode)
+Python, pandas, matplotlib, Streamlit, google-play-scraper
 
