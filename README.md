@@ -1,8 +1,7 @@
 # Fintech App Review Intelligence
 
 > Turning 600+ unstructured Google Play reviews of India's top fintech apps into a prioritized list of what product teams should fix first.
-
-
+Click here for Dashboard : https://appreviewintel-tgducretoaxum3secu68je.streamlit.app/ 
 ## Problem
 Product teams at Indian fintech apps receive thousands of Play Store reviews. They are noisy, unstructured, and hard to turn into decisions. **Which issues hurt users most, and how do competing apps compare?**
 
